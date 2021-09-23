@@ -1,5 +1,10 @@
+@using ToDoList.Models;
+
 <h1>To Do List</h1>
 <ul>
-  <li>@Model.Description</li>
+  @foreach (Item item in Model)
+  {
+  <li>@item.Description</li>
+  }
 </ul>
 <a href="/items/new">Add a new item.</a>
