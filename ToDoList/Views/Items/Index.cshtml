@@ -8,7 +8,7 @@
 <ul>
   @foreach (Item item in Model)
   {
-  <li>@item.Description</li>
+  <li><a href="/items/@item.Id">@item.Description</li>
   }
 </ul>
 
