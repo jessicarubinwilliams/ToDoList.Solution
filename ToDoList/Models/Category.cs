@@ -29,7 +29,7 @@ namespace ToDoList.Models
 
     public static Category Find(int searchId)
     {
-      return _instances[searchId-2];
+      return _instances[searchId-1];
     }
   }
 }
