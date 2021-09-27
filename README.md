@@ -22,6 +22,7 @@
 * _Microsoft.NET.Test.Sdk 15.0.0_
 * _MSTest.TestAdapter 1.3.2_
 * _MSTest.TestFramework 1.3.2_
+* _MySqlConnector 0.69.0_
 
 ## Description <a id="description"></a>
 
