@@ -55,14 +55,6 @@ namespace ToDoList.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    [TestMethod]
-    public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
-    {
-      Item firstItem = new Item("Mow the lawn");
-      Item secondItem = new Item("Mow the lawn");
-      Assert.AreEqual(firstItem, secondItem);
-    }
-
     // [TestMethod]
     // public void GetAll_ReturnsItems_ItemList()
     // {
@@ -74,6 +66,24 @@ namespace ToDoList.Tests
     //   List<Item> result = Item.GetAll();
     //   CollectionAssert.AreEqual(newList, result);
     // }
+
+    [TestMethod]
+    public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
+    {
+      Item firstItem = new Item("Mow the lawn");
+      Item secondItem = new Item("Mow the lawn");
+      Assert.AreEqual(firstItem, secondItem);
+    }
+
+    [TestMethod]
+    public void Save_SavesToDatabase_ItemsList()
+    {
+      Item testItem = new Item("Mow the lawn");
+      testItem.Save();
+      List<Item> result = Item.GetAll();
+      List<Item> testList = new List<Item>{testItem};
+      CollectionAssert.AreEqual(testList, result);
+    }
 
     // [TestMethod]
     // public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
