@@ -53,7 +53,6 @@ namespace ToDoList.Models
         conn.Dispose();
       }
     }
-  }
 
     public static Item Find(int searchId)
     {
