@@ -23,6 +23,8 @@
 * _MSTest.TestAdapter 1.3.2_
 * _MSTest.TestFramework 1.3.2_
 * _MySqlConnector 0.69.0_
+* _Microsoft.EntityFrameworkCore 5.0.0_
+* _Pomelo.EntityFrameworkCore.MySql 5.0.0-alpha.2_
 
 ## Description <a id="description"></a>
 
