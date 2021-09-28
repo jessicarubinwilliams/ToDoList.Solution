@@ -88,11 +88,31 @@ namespace ToDoList.Models
       }
     }
 
-    public static Item Find(int searchId)
+    public static Item Find(int id)
     {
-      // Temporarily returning placeholder item to get beyond compiler errors until we refactor to work with database.
-      Item placeholderItem = new Item("placeholder item");
-      return placeholderItem;
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM items WHERE id = @thisId;";
+      MySqlParameter thisId = new MySqlParameter();
+      thisId.ParameterName = "@thisId";
+      thisId.Value = id;
+      cmd.Parameters.Add(thisId);
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int itemId = 0;
+      string itemDescription = "";
+      while (rdr.Read())
+      {
+        itemId = rdr.GetInt32(0);
+        itemDescription = rdr.GetString(1);
+      }
+      Item foundItem= new Item(itemDescription, itemId);
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return foundItem;
     }
   }
 }
