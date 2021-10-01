@@ -14,7 +14,7 @@ namespace ToDoList
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
-              .AddJsonFile("appsettings.json");
+          .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
@@ -40,7 +40,7 @@ namespace ToDoList
       });
 
       app.UseStaticFiles();
-
+      
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Hello World!");
