@@ -14,7 +14,7 @@ namespace ToDoList
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
-          .AddJsonFile("appsettings.json");
+              .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
@@ -23,6 +23,7 @@ namespace ToDoList
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddMvc();
+
       services.AddEntityFrameworkMySql()
         .AddDbContext<ToDoListContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
@@ -42,7 +43,8 @@ namespace ToDoList
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Hello World! A proper MVC route cannot be found.");
+        await context.Response.WriteAsync("Hello World!");
       });
     }
   }
+}
