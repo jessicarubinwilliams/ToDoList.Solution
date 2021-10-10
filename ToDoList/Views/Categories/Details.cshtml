@@ -2,24 +2,26 @@
   Layout = "_Layout";
 }
 
-@using ToDoList.Models;
 @model ToDoList.Models.Category;
 
 <h2>Category Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-<ul>
-@if (@Model.Items.Count == 0)
+@if(@Model.JoinEntities.Count == 0)
 {
-  <p>no items found</p>
+  <p>This category does not contain any items</p>
 }
-
-@foreach (Item item in @Model.Items)
+else
 {
-  <li>Description: @item.Description</li>
+  <h4>Items the category contains:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Item.Description</li>
+  }
+  </ul>
 }
-</ul>
 
 <p>@Html.ActionLink("Back to categories", "Index")</p>
 <p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
