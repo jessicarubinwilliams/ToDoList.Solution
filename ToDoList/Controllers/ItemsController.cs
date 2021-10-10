@@ -28,7 +28,7 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Item item)
+    public ActionResult Create(Item item, int CategoryId)
     {
         _db.Items.Add(item);
         _db.SaveChanges();
