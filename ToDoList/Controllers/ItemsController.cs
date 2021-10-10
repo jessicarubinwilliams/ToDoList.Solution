@@ -24,7 +24,7 @@ namespace ToDoList.Controllers
 
     public ActionResult Create()
     {
-        ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+        ViewBag.Categories = _db.Categories.ToList();
         return View();
     }
 
@@ -45,7 +45,7 @@ namespace ToDoList.Controllers
     public ActionResult Edit(int id)
     {
         var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-        ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+         ViewBag.Categories = _db.Categories.ToList();
         return View(thisItem);
     }
 
