@@ -18,11 +18,13 @@
 * _C#_
 * _.NET 5.0.100_
 * _ASP.NET Core MVC_
+* _dotnet ef 3.0.0_
 * _Microsoft.NET.Sdk.Web_
 * _Microsoft.NET.Test.Sdk 15.0.0_
 * _MSTest.TestAdapter 1.3.2_
 * _MSTest.TestFramework 1.3.2_
 * _Microsoft.EntityFrameworkCore 5.0.0_
+* _Microsoft.EntityFrameworkCore.Design -v 5.0.0_
 * _Pomelo.EntityFrameworkCore.MySql 5.0.0-alpha.2_
 
 ## Description <a id="description"></a>
